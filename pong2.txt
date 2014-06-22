@@ -1,0 +1,14 @@
+Paddle code
+if ball_pos[1] >= paddle1_pos[1] and ball_pos[1] <= paddle1_pos:
+ball_vel[0] = -ball_vel[0]
+
+
+
+def keydown(key):    # update paddle's vertical position, keep paddle on the screen    
+if key == simplegui.KEY_MAP("w") and paddle1_pos - paddle1_vel >= HALF_PAD_HEIGHT:            
+c.draw_line([x1,y1 - paddle1_vel],[x2,y2 - paddle1_vel], PAD_WIDTH, "yellow")         
+
+elif key == simplegui.KEY_MAP("s") and paddle1_pos + paddle1_vel <= HEIGHT - HALF_PAD_HEIGHT - 1:            
+c.draw_line([x1,y1 + paddle1_vel],[x2,y2 + paddle1_vel], PAD_WIDTH, "yellow")             
+
+if key == simplegui.KEY_MAP("Up") and paddle2_pos + paddle2_vel >= HALF_PAD_HEIGHT:            c.draw_line([WIDTH - x1,y1 - paddle2_vel],[WIDTH - x2,y2 - paddle2_vel], PAD_WIDTH, "yellow")         elif key == simplegui.KEY_MAP("Down") and paddle2_pos + paddle2_vel <= HEIGHT - HALF_PAD_HEIGHT - 1:            c.draw_line([WIDTH - x1,y1 + paddle2_vel],[WIDTH - x2,y2 + paddle2_vel], PAD_WIDTH, "yellow") 
